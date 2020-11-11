@@ -19,5 +19,6 @@ public class Test {
             h = 0;
         }
         System.out.println("下一秒：" + h + ":" + m + ":" + s);
+        System.out.println("a");
     }
 }
