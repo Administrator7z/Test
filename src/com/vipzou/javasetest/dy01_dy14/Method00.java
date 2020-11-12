@@ -7,6 +7,8 @@ public class Method00 {
         Scanner sc = new Scanner(System.in);
         System.out.println("输入");
         int num = sc.nextInt();
+
+
         if (num % 2 == 0) {
             System.out.println(num + "是偶数");
         }
