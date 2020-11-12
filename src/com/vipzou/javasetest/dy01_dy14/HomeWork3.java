@@ -1,10 +1,10 @@
-package com.vipzou.javasetest;
+package com.vipzou.javasetest.dy01_dy14;
 
 import java.util.Scanner;
 
 public class HomeWork3 {
     public static void main(String[] args) {
-        main7();
+        main8();
     }
 
 
@@ -192,6 +192,13 @@ public class HomeWork3 {
                 System.out.println("没有");
 
         }
+    }
+    public static void main8(){
+
+        for (char ch = 'z'; ch >= 'a';ch--){
+            System.out.print(ch+"\t");
+        }
+
     }
 
 

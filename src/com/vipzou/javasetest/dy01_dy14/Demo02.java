@@ -1,4 +1,4 @@
-package com.vipzou.javasetest;
+package com.vipzou.javasetest.dy01_dy14;
 
 class Demo02{
     public static void main(String[] args){

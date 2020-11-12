@@ -1,4 +1,4 @@
-package com.vipzou.javasetest;
+package com.vipzou.javasetest.dy01_dy14;
 
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package com.vipzou.javasetest.dy01_dy14;
+
 import java.util.Scanner;
 class Ope{
     public static void main(String[] args){

@@ -1,4 +1,9 @@
+package com.vipzou.javasetest.dy01_dy14;
+
 import java.util.Scanner;
+
+
+
 public class Demo03{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
