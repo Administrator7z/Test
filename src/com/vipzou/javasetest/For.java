@@ -1,3 +1,5 @@
+package com.vipzou.javasetest;
+
 public class For {
     public static void main(String[] args) {
         main7();

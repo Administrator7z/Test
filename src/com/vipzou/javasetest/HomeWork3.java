@@ -1,8 +1,10 @@
+package com.vipzou.javasetest;
+
 import java.util.Scanner;
 
-public class HomeWork {
+public class HomeWork3 {
     public static void main(String[] args) {
-        main0();
+        main7();
     }
 
 
@@ -171,5 +173,28 @@ public class HomeWork {
         }
         System.out.println("下一秒：" + h + ":" + m + ":" + s);
     }
+
+    public static void main7() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("输名次");
+        String a = scanner.next();
+        switch (a) {
+            case " 第一名":
+                System.out.println("100W");
+                break;
+            case "第二名":
+                System.out.println("50W");
+                break;
+            case "第三名":
+                System.out.println("20W");
+                break;
+            default:
+                System.out.println("没有");
+
+        }
+    }
+
+
+
 }
 

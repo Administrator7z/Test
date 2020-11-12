@@ -1,3 +1,5 @@
+package com.vipzou.javasetest;
+
 class Lian{
 	public static void main(String[] args){
 		String pinPai = "acer";
