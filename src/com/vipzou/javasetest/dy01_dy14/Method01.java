@@ -69,26 +69,21 @@ public class Method01 {
         }
     }
 
-    public static  void print() {
-        int sum1=1;//定义第一项为1
-        int sum2=1;//定义第二项为1
-        for(int i=0;i<30;i++)
-        {
-            //一二项都为1
-            if(i==0||i==1)
-            {
-                System.out.print(1+",");
-            }
-            //其余的都是前两项的和
-            else
-            {
-                //前两项的和
-                int flag=sum1+sum2;
-                //把前一项的值赋给前一项的再前面一项
-                sum1=sum2;
-                //把当前项赋给前一项
-                sum2=flag;
-                System.out.print(flag+",");
+    public static void print() {
+        int sum1 = 1;
+        int sum2 = 1;
+        for (int i = 0; i < 30; i++) {
+
+            if (i == 0 || i == 1) {
+                System.out.print(1 + ",");
+            } else {
+
+                int flag = sum1 + sum2;
+
+                sum1 = sum2;
+
+                sum2 = flag;
+                System.out.print(flag + ",");
             }
         }
 
