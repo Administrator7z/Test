@@ -9,8 +9,8 @@ class Lian{
 		String chuLiQi = "i7";
 		System.out.println( "????"+pinPai+
 							"\n?????"+yanSe+
-							"\n??»Ç"+chiCun+
-							"\n??¹×"+neiCun+
+							"\n??ç£º"+chiCun+
+							"\n??æ£º"+neiCun+
 							"\n??????:"+chuLiQi);		
 	}
 

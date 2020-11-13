@@ -123,8 +123,13 @@ public class HomeWork3 {
         int w = scanner.nextInt();
         System.out.print("间隔天数");
         int d = scanner.nextInt();
-        int x = (w + d) % 7;
-        switch (x) {
+        print01(w, d);
+
+
+    }
+
+    public static void print01(int w, int d) {
+        switch ((w + d) % 7) {
             case 0:
                 System.out.println("星日");
                 break;
@@ -147,8 +152,6 @@ public class HomeWork3 {
                 System.out.println("星6");
                 break;
         }
-
-
     }
 
     //从键盘上按hh mm ss的格式输入一个时间，输出这个时间的前一秒

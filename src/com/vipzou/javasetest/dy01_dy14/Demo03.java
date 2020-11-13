@@ -7,17 +7,17 @@ import java.util.Scanner;
 public class Demo03{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
-		System.out.println("ÊäÈë");
+		System.out.println("è¾“å…¥");
 		int num = sc.nextInt();
 		if(num % 4 == 0 && num % 100 != 0) {
-			System.out.println(num + "Èò");
+			System.out.println(num + "é—°");
 		}
 		else {
 			if(num % 400 == 0) { 
-				System.out.println(num + "Èò");
+				System.out.println(num + "é—°");
 			}
 			else {
-				System.out.println(num +"²»ÊÇ");
+				System.out.println(num +"ä¸æ˜¯");
 			}
 			
 		}
