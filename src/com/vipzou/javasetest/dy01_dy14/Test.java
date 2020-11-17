@@ -2,7 +2,7 @@ package com.vipzou.javasetest.dy01_dy14;
 
 public class Test {
     public static void main(String[] args) {
-        Student cxk = new Student();
+        Student00 cxk = new Student00();
         cxk.setName("鸡哥");
         cxk.setAge(11);
         cxk.setGender('男');

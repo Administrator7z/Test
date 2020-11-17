@@ -1,75 +1,73 @@
 package com.vipzou.javasetest.dy01_dy14;
 
 public class Student {
-    private String name;
-    private int age;
-    private char gender;
-    private double height;
-    private double weight;
-
-    public void study() {
-        System.out.println("学");
-    }
+    private int studentNumber;
+    private String studentName;
+    private int studentAge;
+    private char studentSex;
+    private Grade studentClass;
 
     public Student() {
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Student(String name, int age, char gender, double height, double weight) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        this.height = height;
-        this.weight = weight;
+    public Student(int studentNumber, String studentName, int studentAge, char studentSex, Grade studentClass) {
+        this.studentNumber = studentNumber;
+        this.studentName = studentName;
+        this.studentAge = studentAge;
+        this.studentSex = studentSex;
+        this.studentClass = studentClass;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                ", height=" + height +
-                ", weight=" + weight +
+                "学生学号=" + studentNumber +
+                ", 学生姓名='" + studentName + '\'' +
+                ", 学生年龄=" + studentAge +
+                ", 学生性别=" + studentSex +
+                ", 学生年级名称=" + (studentClass == null ? null : studentClass.getClassName()) +
+                ", 学生年级地址=" + (studentClass == null ? null : studentClass.getClassAddress()) +
+
                 '}';
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getStudentNumber() {
+        return studentNumber;
     }
 
-    public int getAge() {
-        return age;
+    public void setStudentNumber(int studentNumber) {
+        this.studentNumber = studentNumber;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public char getGender() {
-        return gender;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public void setGender(char gender) {
-        this.gender = gender;
+    public int getStudentAge() {
+        return studentAge;
     }
 
-    public double getHeight() {
-        return height;
+    public void setStudentAge(int studentAge) {
+        this.studentAge = studentAge;
     }
 
-    public void setHeight(double height) {
-        this.height = height;
+    public char getStudentSex() {
+        return studentSex;
     }
 
-    public double getWeight() {
-        return weight;
+    public void setStudentSex(char studentSex) {
+        this.studentSex = studentSex;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public Grade getStudentClass() {
+        return studentClass;
+    }
+
+    public void setStudentClass(Grade studentClass) {
+        this.studentClass = studentClass;
     }
 }
