@@ -7,7 +7,7 @@ import java.util.Scanner;
  * 动力节点
  * 2020/11/26
  */
-public class Test {
+public class Test01 {
     public static void main(String[] args) {
         //1) 从键盘上输入年和月
         Scanner sc = new Scanner(System.in);
