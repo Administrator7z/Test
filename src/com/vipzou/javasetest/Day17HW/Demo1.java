@@ -8,22 +8,15 @@ public class Demo1 {
     public static void main(String[] args) {
         int[] intArr = new int[10];
         Scanner sc = new Scanner(System.in);
-        intArr[0] = sc.nextInt();
-        intArr[1] = sc.nextInt();
-        intArr[2] = sc.nextInt();
-        intArr[3] = sc.nextInt();
-        intArr[4] = sc.nextInt();
-        intArr[5] = sc.nextInt();
-        intArr[6] = sc.nextInt();
-        intArr[7] = sc.nextInt();
-        intArr[8] = sc.nextInt();
-        intArr[9] = sc.nextInt();
-        int a = 0;
+        for (int i = 0; i < intArr.length; i++) {
+            int x = sc.nextInt();
+        }
         int b = 0;
         int c = 0;
-        int e = 0;
+        //int e = 0;
         int f = 0;
         for (int i = 0; i < intArr.length; i++) {
+            int a = 0;
             a += intArr[i];
             if (i == intArr.length - 1) {
                 b = a / 10;
@@ -46,7 +39,7 @@ public class Demo1 {
         }
         for (int i : intArr) {
             if (i > b) {
-                c += 1;
+                c++;
             }
         }
         System.out.println("高于平均人数" + c);
