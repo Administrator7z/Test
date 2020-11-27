@@ -1,18 +1,30 @@
 package com.vipzou.javasetest.Day18HW;
 
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Company {
-    Employee[] employees = new Employee[10];
-    int size = 0;
+    Employee[] employees = new Employee[20];
+    int size;
 
     public void add(Employee employee) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("输入姓名，年龄，工资");
-        employee.setName(sc.next()).setAge(sc.nextInt()).setSalary(sc.nextDouble());
+        //Scanner sc = new Scanner(System.in);
+        //System.out.println("输入姓名，年龄，工资");
+        //employee.setName(sc.next()).setAge(sc.nextInt()).setSalary(sc.nextDouble());
         employees[size++] = employee;
 
+    }
+
+
+
+    public void paiXu() {
+        Arrays.sort(employees, 0, size, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                return o1.getAge() - o2.getAge();
+            }
+        });
     }
 
     public String show() {
@@ -27,28 +39,39 @@ public class Company {
         return x;
     }
 
-    public void judge(String name) {
-        for (int i = 0; i < size; i++) {
-            if (employees[i].equals(name)) {
-                System.out.println("存在");
-            } else {
-                System.out.println("不存在");
+    public boolean judge(String name) {
+        if (name != null) {
+            for (int i = 0; i < size; i++) {
+                if (name.equals(employees[i].getName())) {
+                    return true;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (employees[size].getName() == null) {
+                    return true;
+                }
+
             }
         }
+
+
+        return false;
     }
 
-    public void del(String name) {
+    public boolean del(String name) {
 
         for (int i = 0; i < size; i++) {
-            if (employees[i].equals(name)) {
+            if (name.equals(employees[i].getName())) {
                 Employee[] newEmployees = new Employee[employees.length - 1];
 
                 System.arraycopy(employees, 0, newEmployees, 0, i);
                 System.arraycopy(employees, i + 1, newEmployees, i, newEmployees.length - i);
-                System.out.println("删除成功");
+                return true;
             } else {
-                System.out.println("不存在");
+                return false;
             }
         }
+        return false;
     }
 }
