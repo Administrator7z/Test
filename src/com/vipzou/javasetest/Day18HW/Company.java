@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Company {
+    public static void main(String[] args) {
+
+    }
+
     Employee[] employees = new Employee[20];
     int size;
 
@@ -15,7 +19,6 @@ public class Company {
         employees[size++] = employee;
 
     }
-
 
 
     public void paiXu() {

@@ -14,11 +14,12 @@ public class Test {
         company.add(new Employee("IIS", 88, 2000));
         company.add(new Employee("谢谢", 34, 2000));
         company.add(new Employee("谢谢", 45, 2000));
-
         company.paiXu();
 
+        // company.paiXu();
 
-        System.out.println(company.show());
+
+        //System.out.println(company.show());
 //        company.judge("啊啊");
         //company.del("啊啊");
 

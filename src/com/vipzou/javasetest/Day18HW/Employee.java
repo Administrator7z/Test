@@ -1,6 +1,6 @@
 package com.vipzou.javasetest.Day18HW;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     private String name;
     private int age;
     private double salary;
@@ -45,4 +45,9 @@ public class Employee {
     }
 
 
+    @Override
+    public int compareTo(Employee o) {
+
+        return this.name.compareTo(o.name);
+    }
 }
