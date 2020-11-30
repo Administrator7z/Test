@@ -1,6 +1,6 @@
 package com.vipzou.javasetest.day01_day13;
 
-public class Date {
+public class DateTest2 {
     private int year;
     private int month;
     private int day;
@@ -18,7 +18,7 @@ public class Date {
         return year;
     }
 
-    public Date setYear(int year) {
+    public DateTest2 setYear(int year) {
         this.year = year;
         return this;
     }
@@ -27,7 +27,7 @@ public class Date {
         return month;
     }
 
-    public Date setMonth(int month) {
+    public DateTest2 setMonth(int month) {
         this.month = month;
         return this;
     }
@@ -36,7 +36,7 @@ public class Date {
         return day;
     }
 
-    public Date setDay(int day) {
+    public DateTest2 setDay(int day) {
         this.day = day;
         return this;
     }
