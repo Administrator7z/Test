@@ -22,8 +22,7 @@ public class Test1 {
 
         System.out.println("-------------------------------");
         List<String> list =  new ArrayList<>();
-        list.add("aa");
-        list.add("bb");
+        list.add("aa");        list.add("bb");
         list.add("cc");
         list.add("dd");
         list.add("ee");
