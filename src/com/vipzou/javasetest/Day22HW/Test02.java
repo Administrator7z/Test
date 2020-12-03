@@ -1,7 +1,4 @@
-package ldj;
-
-import com.sun.glass.ui.Size;
-import com.sun.xml.internal.ws.wsdl.writer.document.Types;
+package com.vipzou.javasetest.Day22HW;
 
 import java.util.ArrayList;
 import java.util.List;
