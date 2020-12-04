@@ -10,9 +10,10 @@ public class Poker implements Comparable<Poker>{
     String huaSe;
     int keyNum;
 
-    public Poker(String daXiao, String huaSe) {
+    public Poker(String daXiao, String huaSe, int keyNum) {
         this.daXiao = daXiao;
         this.huaSe = huaSe;
+        this.keyNum = keyNum;
     }
 
     @Override
@@ -20,6 +21,7 @@ public class Poker implements Comparable<Poker>{
         return "Poker{" +
                 "daXiao='" + daXiao + '\'' +
                 ", huaSe='" + huaSe + '\'' +
+                ", keyNum=" + keyNum +
                 '}';
     }
 
@@ -39,8 +41,9 @@ public class Poker implements Comparable<Poker>{
 
     @Override
     public int compareTo(Poker o) {
-        Collator collator = Collator.getInstance(Locale.CHINESE);
+        //Collator collator = Collator.getInstance(Locale.CHINESE);
 //        Map<String, Integer> rules = Demo2.rules;
-        return collator.compare(this.daXiao,o.daXiao);
+       // return collator.compare(this.daXiao,o.daXiao);
+        return this.keyNum-o.keyNum;
     }
 }

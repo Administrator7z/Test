@@ -7,14 +7,16 @@ public class Demo2 {
     public static void main(String[] args) {
         String[] daXiao = {"3","4","5","6","7","8","9","10","J","Q","K","A","2"};
         String[] huaSe = {"♥","♦","♠","♣"};
+        int size = 0;
         List<Poker> pokerList = new ArrayList<>();
         for (String s : daXiao) {
             for (String s1 : huaSe) {
-                pokerList.add(new Poker(s,s1));
+                pokerList.add(new Poker(s,s1,size));
             }
+            size++;
         }
-        pokerList.add(new Poker("大王","红"));
-        pokerList.add(new Poker("小王","黑"));
+        pokerList.add(new Poker("大王","红",100));
+        pokerList.add(new Poker("小王","黑",99));
         System.out.println(pokerList.size());
         List<List<Poker>> all = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
