@@ -8,7 +8,7 @@ public class Demo2 {
     public static void main(String[] args) {
         String sb = "daassadfasffafklasjfkalsjfkjskfjaskjgfjhaghjklasfhjklasjfsjfsal";
         String[] chars = sb.split("");
-        char[] chars1 = sb.toCharArray();
+        //char[] chars1 = sb.toCharArray();
 
         Map<String, Integer> map = new HashMap<>();
 

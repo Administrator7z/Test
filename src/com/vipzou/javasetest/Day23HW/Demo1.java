@@ -4,6 +4,7 @@ import jdk.nashorn.internal.ir.IfNode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Demo1 {
     public static void main(String[] args) {
@@ -24,7 +25,15 @@ public class Demo1 {
         }
         System.out.println(map.keySet());
         System.out.println(map.values());
-        System.out.println(map.entrySet());
+        Set<Map.Entry<String, String>> entries = map.entrySet();
+        System.out.println(entries);
+        for (Map.Entry<String, String> entry : entries) {
+            System.out.println(entry.getKey()+entry.getValue());
+        }
+
+        map.remove("美术课");
+
+
     }
 
 }
