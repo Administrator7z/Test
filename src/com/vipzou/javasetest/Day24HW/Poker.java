@@ -1,49 +1,32 @@
 package com.vipzou.javasetest.Day24HW;
 
-import java.text.Collator;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Objects;
 
-public class Poker implements Comparable<Poker>{
-    String daXiao;
-    String huaSe;
+public class Poker implements Comparable<Poker> {
+    String numArr;
+    String colorArr;
     int keyNum;
 
     public Poker(String daXiao, String huaSe, int keyNum) {
-        this.daXiao = daXiao;
-        this.huaSe = huaSe;
+        this.numArr = daXiao;
+        this.colorArr = huaSe;
         this.keyNum = keyNum;
     }
 
     @Override
     public String toString() {
-        return "Poker{" +
-                "daXiao='" + daXiao + '\'' +
-                ", huaSe='" + huaSe + '\'' +
-                ", keyNum=" + keyNum +
-                '}';
+        return
+                numArr
+                        + colorArr
+                ;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Poker poker = (Poker) o;
-        return Objects.equals(daXiao, poker.daXiao) &&
-                Objects.equals(huaSe, poker.huaSe);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(daXiao, huaSe);
-    }
 
     @Override
     public int compareTo(Poker o) {
         //Collator collator = Collator.getInstance(Locale.CHINESE);
 //        Map<String, Integer> rules = Demo2.rules;
-       // return collator.compare(this.daXiao,o.daXiao);
-        return this.keyNum-o.keyNum;
+        // return collator.compare(this.daXiao,o.daXiao);
+        return this.keyNum - o.keyNum;
     }
 }
