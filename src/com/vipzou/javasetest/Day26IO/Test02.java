@@ -1,4 +1,4 @@
-package objectio;
+package com.vipzou.javasetest.Day26IO;
 
 import java.io.FileInputStream;
 import java.io.IOException;
