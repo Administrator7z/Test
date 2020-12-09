@@ -16,9 +16,9 @@ public class FileTest {
         long freeSpace = f1.lastModified();
         System.out.println(new Date(freeSpace));*/
 
-        //listSubFiles("C:\\");
+        listSubFiles("C:\\");
         //del("C:\\新建文件夹");
-        search("C:\\新建文件夹","123.txt");
+        //search("C:\\新建文件夹","123.txt");
 
 
     }

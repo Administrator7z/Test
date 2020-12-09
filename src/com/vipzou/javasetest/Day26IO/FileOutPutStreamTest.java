@@ -37,7 +37,7 @@ public class FileOutPutStreamTest {
 //            int[] ints = new int[fis.available()];
             int bb = fis.read();
             System.out.println(fis.available());
-            int x = 0;
+ //           int x = 0;
             while (bb != -1) {
 //                ints[x] = bb;
                 bb = fis.read();
