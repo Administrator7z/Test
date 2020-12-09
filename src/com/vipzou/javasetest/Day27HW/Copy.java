@@ -28,9 +28,10 @@ public class Copy {
                         copy(file.toString(), s2 + "\\" + file.getName());
                     }
 
-                    //if (!file.isDirectory())
-                    else {
+                    if (file.isDirectory())
+                    {
                         copyFolder(file.toString(), s2 + "\\" + file.getName());
+
 
                     }
 
