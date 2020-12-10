@@ -6,8 +6,40 @@ import java.io.*;
 
 public class Copy {
     public static void main(String[] args) {
-        copyFolder("E:\\abc", "E:\\cbd");
+        copyFolder2("C:\\Z\\截图工具", "D:");
         //listSubFiles("F:");
+    }
+    private static void copyFolder2(String srcFolder, String destFoleder) {
+        //不存在不需要复制
+        File srcDir = new File(srcFolder);
+        if (!srcDir.exists()){
+            return;
+
+        }
+        //目标不存在创建文件夹
+        File destDir = new File(destFoleder);
+        if (!destDir.exists()){
+            destDir.mkdirs();
+        }
+        //如果srcFoler是一个文件 不复制
+        if (srcDir.isFile()){
+            return;
+        }
+        if (destDir.isFile()){
+            return;
+        }
+        //遍历源文件内容
+        File[] files = srcDir.listFiles();
+        for (File srcFile : files) {
+            File destFile = new File(destFoleder,srcFile.getName());
+            if (srcFile.isFile()){
+                copy(srcFile.toString(), destFile.toString());
+            }else{
+                copyFolder2(srcFile.getAbsolutePath(), destFile.getAbsolutePath());
+            }
+
+        }
+
     }
 
     private static void copyFolder(String s1, String s2) {
