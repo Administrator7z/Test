@@ -1,65 +1,41 @@
 package com.vipzou.javasetest.Day29;
 
 public class Test03 {
-    private static final Object obj = new Object();
-    static int s;
+    private static final Object OBJ = new Object();
+    static int num = 0;
+    private static final int THREADSNUM = 5;
+
     public static void main(String[] args) {
 
-        Thread t0 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (obj) {
-                    while (true) {
-                        if (s %2 ==0){
-                            try {
-                                obj.wait();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        System.out.println(Thread.currentThread().getName()+"----------"+s);
-                        s++;
+        for (int i = 0; i < THREADSNUM; i++) {
+            final int r = i;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    for (int j = 0; j < 100; j++) {
+                        printNum(r);
                     }
-
-
                 }
+            }).start();
 
-
-
-            }
-        });
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                synchronized (obj) {
-                    while (true) {
-                        if (s %2 !=0){
-                            try {
-                                obj.wait();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        System.out.println(Thread.currentThread().getName()+"----------"+s);
-                        s++;
-                    }
-
-                }
-
-
-                }
-
-
-        });
-        t0.start();
-        t1.start();
-
-
+        }
     }
 
 
+    private static synchronized void printNum(int a) {
+
+        while (num % THREADSNUM != a) {
+            try {
+                Test03.class.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(Thread.currentThread().getName() + "----------" + num);
+        num++;
+
+        Test03.class.notifyAll();
 
 
-
-
+    }
 }
