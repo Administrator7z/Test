@@ -3,8 +3,8 @@ package com.vipzou.javasetest.Day29HW;
 import java.util.Random;
 
 public class Demo {
-    static int ticket = 10000;
-    private static final int THREADSNUM = 5;
+    static int ticket = 20;
+    private static final int THREADSNUM = 10;
 
     public static void main(String[] args) {
 
@@ -27,7 +27,7 @@ public class Demo {
         if (ticket < i || ticket == 0) {
             return;
         } else {
-            System.out.print("当前剩余[" + ticket + "]张\t");
+            System.out.print("当前剩余[" + ticket + "]张");
             ticket = ticket - i;
         }
 
