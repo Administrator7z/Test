@@ -67,7 +67,7 @@ public class DeptDao {
         return flag;
     }
 
-    public int delete(Dept dept) throws Exception {
+    public int delete(Integer deptno) throws Exception {
         String sql = "delete from dept where deptno=?";
         String url = "jdbc:mysql://localhost:3306/test";
         String user = "root";
@@ -78,7 +78,7 @@ public class DeptDao {
         try {
             con = DriverManager.getConnection(url, user, password);
             ps = con.prepareStatement(sql);
-            ps.setInt(1, dept.getDeptno());
+            ps.setInt(1, deptno);
             flag = ps.executeUpdate();
         } finally {
             if (ps != null) {
