@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 
-public class JDBCTest {
+public class InsertTest {
 
     public static void main(String[] args) throws Exception {
         String url = "jdbc:mysql://localhost:3306/test";
