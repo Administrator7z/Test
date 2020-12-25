@@ -14,12 +14,12 @@ public class Dept {
         this.loc = loc;
     }
 
-    public Integer getDeptno() {
+    public Integer getDeptNo() {
         return deptNo;
     }
 
-    public void setDeptno(Integer deptno) {
-        this.deptNo = deptno;
+    public void setDeptNo(Integer deptNo) {
+        this.deptNo = deptNo;
     }
 
     public String getDname() {
@@ -37,4 +37,5 @@ public class Dept {
     public void setLoc(String loc) {
         this.loc = loc;
     }
+
 }

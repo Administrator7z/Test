@@ -14,7 +14,7 @@ public class Test {
         for (Dept dept : deptLIst) {
             System.out.println(dept.getDeptno()+dept.getDname()+dept.getLoc());
         }
-        dD.delete(22);
+
 
 
     }

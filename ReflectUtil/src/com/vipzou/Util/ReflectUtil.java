@@ -94,25 +94,26 @@ public class ReflectUtil {
         System.out.println("sql = " + sql.toString());
         return sql.toString();
     }
-
+    //table:临时表 classManager:类.class
     public static List convertData(ResultSet table, Class classManager) throws Exception {
         ResultSetMetaData rsmd;
         Field fieldArray[] = null;
         List list = new ArrayList();
-        rsmd = table.getMetaData();
-        fieldArray = classManager.getDeclaredFields();
+        rsmd = table.getMetaData();                    //rsmd 获取表结构
+        fieldArray = classManager.getDeclaredFields(); //fieldArray 获取字段和类型
+        int a = 0;
         while (table.next()) {
-            Object instance = classManager.newInstance();
+            Object instance = classManager.newInstance();  //创建对象
             for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-                String columnName = rsmd.getCatalogName(i);
-                String value = table.getString(columnName);
+                String columnName = rsmd.getColumnName(i);     //表头 列名
+                String value = table.getString(columnName);  //内容
                 if (value != null) {
                     for (int j = 0; j < fieldArray.length; j++) {
                         Field fieldManager = fieldArray[j];
-                        String fieldName = fieldManager.getName();
-                        String typeName = fieldManager.getType().getSimpleName();
-                        if (fieldName.equalsIgnoreCase(columnName)) {
-                            fieldManager.setAccessible(true);
+                        String fieldName = fieldManager.getName(); //类属性
+                        String typeName = fieldManager.getType().getSimpleName(); //类属性类型
+                        if (fieldName.equalsIgnoreCase(columnName)) {  //Dao类属性名和表头不分大小写比较
+                            fieldManager.setAccessible(true);               //设置访问性，反射类的方法，设置为true就可以访问private修饰的东西，否则无法访问 //使用 setAccessible(true) 可以临时改变访问权限，就可以获取私有成员变量的值
                             if ("String".equalsIgnoreCase(typeName)) {
                                 fieldManager.set(instance, value);
                             } else if ("Integer".equalsIgnoreCase(typeName)) {
@@ -122,10 +123,12 @@ public class ReflectUtil {
                             }
                             break;
                         }
+                        a++;
                     }
                 }
             }
             list.add(instance);
+            System.out.println(a);
         }
     return list;
 

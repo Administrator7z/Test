@@ -14,7 +14,7 @@ public class JdbcUtil {
         String user = "root";
         String password = "123";
 
-        con = DriverManager.getConnection(url, user, password);
+        con = DriverManager.getConnection(url,user,password);
         return con;
     }
     public PreparedStatement getCar(String sql) throws Exception{
