@@ -1,0 +1,59 @@
+<html>
+   <head>
+        <script type="text/javascript">
+           function fun1(){
+		     //定位id=one的标签对应的DOM对象
+			 var dom1 = document.getElementById("one");
+			 //定位id=two的标签对应的DOM对象
+			 var dom2 = document.getElementById("two");
+			 //处理
+			 var num = window.parseInt(dom1.value) +parseInt(dom2.value);
+			 //定位id=three的标签对应的DOM对象
+			 var dom3 =document.getElementById("three");
+			 //将运算结果通过dom对象赋值给标签中value属性用于展示
+			 dom3.value = num;
+		   }
+
+		   function fun2(){
+		     //定位id=one的标签对应的DOM对象
+			 var dom1 = document.getElementById("one");
+			 //定位id=two的标签对应的DOM对象
+			 var dom2 = document.getElementById("two");
+			 //处理
+			 var num = window.parseInt(dom1.value) - parseInt(dom2.value);
+			 //定位id=three的标签对应的DOM对象
+			 var dom3 =document.getElementById("three");
+			 //将运算结果通过dom对象赋值给标签中value属性用于展示
+			 dom3.value = num;
+		   }
+
+		</script>
+       
+   </head>
+
+   <body>
+        
+            <table border="2" align="center">
+             <tr>
+			     <td>数字1</td>
+				 <td><input type="text" id="one"></td>
+			 </tr>
+			  <tr>
+			     <td>数字2</td>
+				 <td><input type="text" id="two"></td>
+			 </tr>
+			  <tr>
+			     <td>结果</td>
+				 <td><input type="text" id="three"></td>
+			 </tr>
+			  <tr>
+			     <td><input type="button" value="加法" onclick="window.fun1()"></td>
+				 <td><input type="button" value="减法" onclick="window.fun2()"></td>
+			 </tr>
+
+			</table>
+		 
+   
+   </body>
+
+</html>

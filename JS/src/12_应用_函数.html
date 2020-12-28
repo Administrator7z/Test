@@ -1,0 +1,36 @@
+<html>
+   <head>
+       
+   </head>
+
+   <body>
+        
+
+		 <script type="text/javascript">
+                  
+			      function fun1(){
+				    window.alert("fun1 is run...")
+				  }
+
+				  function fun2(p1,p2){
+				     var sum = p1 + p2;
+					 return sum;
+				  }
+
+				  //在script标签直接声明的变量或则函数都会自动分配给window对象
+
+				  var name="mike"; //相当于window.name="mike"
+				  //window.alert("window.name = "+window.name)
+
+				  //window.fun1()
+				  //var num = window.fun2(10,20);
+				  //window.alert("num = "+window.num);
+
+				  //函数简化调用(仅限于window对象中函数)
+                   //alert("ok")
+				     fun1();
+		 </script>
+   
+   </body>
+
+</html>
