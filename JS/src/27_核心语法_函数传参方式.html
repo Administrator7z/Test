@@ -1,0 +1,30 @@
+<html>
+
+    <script type="text/javascript">
+
+            function fun1(p1,p2){
+			   alert("fun1 is run...")
+			}
+
+			//调用:
+			//window.fun1();
+			//window.fun1(10,20);
+			//window.fun1(100,200,300,400)
+
+
+			function fun2(p1, p2){
+			
+			   alert("fun2运行时得到实参个数 "+arguments.length);
+			   for(var i=0;i<arguments.length;i++){
+			         var data = arguments[i];
+					 alert("实参 "+data+" 实参类型 "+typeof data)
+			   }
+			
+			}
+
+			//调用
+			window.fun2(10,"abc",true, new Date())
+
+	</script>
+
+</html>

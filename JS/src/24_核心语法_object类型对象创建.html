@@ -1,0 +1,34 @@
+<html>
+   <body>
+         <script type="text/javascript">
+              //1.通过JavaScript中内置构造函数生成对象
+			 // var obj1 = new Date();
+			 // var obj2 = new Array();
+			  //window.alert("obj1 类型 "+typeof obj1+" obj2类型 "+typeof obj2)
+
+			  //2.通过自定义构造函数生成对象
+                function Student(p1,p2){
+				  this.sid=p1;
+				  this.sname=p2;
+				}
+
+				function Dept(p1,p2,p3){
+				   this.deptNo = p1;
+				   this.dname = p2;
+				   this.loc = p3
+				}
+               //var obj1 = new Student(10,"mike");
+			   //var obj2 = new Dept(10,"Accounting","newYork")
+			   //window.alert("obj1 类型 "+typeof obj1+" obj2类型 "+typeof obj2)
+
+			   /*
+			      JSON格式: {"属性名":值,"属性名":值}
+			   
+			   */
+			     var obj1 = {"empno":10,"ename":"smith","sal":6000};
+				 var obj2 = {"sid":20,"sname":"mike"}
+				 window.alert("obj1 类型 "+typeof obj1+" obj2类型 "+typeof obj2)
+
+		 </script>
+   </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+   <body>
+         <script type="text/javascript">
+             
+			  //1.新建object类型对象
+			   //var obj = {};
+
+              //2.为obj对象新增属性
+			   //obj.car="奔驰";
+			   //obj.money=100000;
+			   //obj.wife="小崔";
+			   //alert("obj.car = "+obj.car+" obj.wife = "+obj.wife);
+
+              //3.使用变量的值作为obj对象的新属性名
+			  // var str1 ="name";
+			  // var str2 ="age";
+			   //obj[str1]="mike" ;// obj.name="mike"
+			   //obj[str2]=22;     // obj.age=22
+			   //alert("obj.name = "+obj.name +" obj.age = "+obj.age)
+
+
+
+			   //删除object类型对象中属性
+			    var stu = {"sid":10,"sname":"mike","home":"北京"};
+
+				//删除sid属性
+				delete stu.sid;
+
+				//删除sname属性
+				 var str ="sname"
+				 delete stu[str]
+
+				//遍历对象中属性信息
+				for(var field in stu){
+				   alert("field :"+field)
+				}
+
+		 </script>
+   </body>
+</html>

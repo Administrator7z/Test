@@ -1,0 +1,42 @@
+  
+  <html>
+     <script type="text/javascript">
+         
+          var array1= ["张家口市","廊坊市","邯郸市"];
+		  var array2= ["郑州市","许昌市"]
+
+		  function fun1(){
+		    //1.获得"省份下拉列表"中被选中的option标签的value
+              var provinceId = document.getElementById("province").value;
+			//2.定位隶属于当前省份下的城市信息
+              var cityArray = null;
+			  if(provinceId == 1){
+			    cityArray = array1;
+			  }else if(provinceId == 2){
+			     cityArray=array2;
+			  }else if(provinceId==0){
+			     cityArray=["请选择"]
+			  }
+			//3.将城市信息填充到"城市下拉列表"
+		      var content=""
+			  for(var i=0;i<cityArray.length;i++){
+			     content+="<option>"+cityArray[i]+"</option>";
+			  }
+			  document.getElementById("city").innerHTML=content;
+		  }
+
+	 </script>
+     <body>
+	      <center>
+	     省份:<select id="province" onchange="window.fun1()">
+                  <option value="0">请选择</option>
+				  <option value="1">河北省</option>
+                  <option value="2">河南省</option>
+		      </select><br/>
+
+          城市:<select id="city">
+                   <option value="0">请选择</option>
+		       </select>
+	     </center>
+	 </body>
+  </html>

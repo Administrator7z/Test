@@ -1,0 +1,27 @@
+<html>
+
+    <script type="text/javascript">
+
+            function fun1(){
+			    var num =10; //局部变量
+			}
+            var name="mike"  //全局变量  window.name="mike"
+
+			function fun2(){
+			  alert("hello "+window.name);
+			}
+			//fun2()
+
+			function fun3(){
+			
+			   var deptno =10; //局部变量
+			   dname="accounting"; //特殊全局变量  window.dname="accounting"
+			
+			}
+            fun3();
+			alert("window.dname = "+window.dname)
+			
+
+	</script>
+
+</html>

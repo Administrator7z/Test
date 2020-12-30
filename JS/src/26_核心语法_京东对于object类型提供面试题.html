@@ -1,0 +1,40 @@
+<html>
+
+    <script type="text/javascript">
+
+           /*
+		      Java编程语言中存在HashMap类型
+			  其生成的对象可以保存任意个键值对
+			  使用方式如下
+			   Map map = new HashMap();
+			   map.put("key1","200")
+			   map.put("key2",400)
+			   map.get("key2")//得到结果是400
+
+			   要求在JavaScript5.0创建一个具有相同功能的对象
+		   
+		   */
+
+		      function HashMap(){
+			     var data = {};
+			     this.put = function(key ,value){
+				                data[key]=value
+				             };
+                 this.get= function(key){
+				             return data[key]  
+				       } 
+                
+					
+                 
+                 
+                
+			  }
+
+			  var map = new HashMap();
+			  map.put("key1",100)
+			  map.put("key2",200)
+			  alert(map.get("key1"));
+
+	</script>
+
+</html>

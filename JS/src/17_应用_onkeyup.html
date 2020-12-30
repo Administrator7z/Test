@@ -1,0 +1,42 @@
+<html>
+      <script type="text/javascript">
+          var array = ["james","java","jones","smith","smart","scott","allen","mysql","ford","fork","wait","wc"];
+          function fun1(){
+		     //1.读取用户在文本框输入内容
+			  var data = document.getElementById("one").value;
+			 //2.到数组定位关联的数据
+			  var content="";  //james<br/>java
+			  for(var i=0;i<array.length;i++){
+			           if(array[i].indexOf(data)==0){
+					      content+=array[i]+"<br/>"
+					   }
+			  }
+			 //3.将关联的数据添加到div
+			  document.getElementById("two").innerHTML=content;
+			 //4.将DIV在浏览器展示出来
+             if(content=='' || data==''){
+			    document.getElementById("two").style.display="none"
+			 }else{
+			    document.getElementById("two").style.display="block"
+			 }
+		  }
+	  </script>
+
+   <body>
+   
+           <center>
+
+		             <div>
+                         <img src="PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+						  style="width:180px"/>
+					 </div>
+                      <input typ="text" id="one" style="width:300px;height:50px;border:1px solid blue"
+					   onkeyup="window.fun1()" 
+					  />
+					  <div id="two" style="width:300px;height:300px;border:1px solid blue;display:none"> </div>
+
+		   </center>
+   
+   </body>
+
+</html>

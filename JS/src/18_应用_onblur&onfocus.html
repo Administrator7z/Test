@@ -1,0 +1,82 @@
+<html>
+      <script type="text/javascript">
+               function fun1(){
+			      //1.得到用户密码的内容
+				  var data = document.getElementById("one").value;
+				  //2.如果"用户密码"没有填写:"用户密码"重新获得光标,给出提示内容
+				  if(data == ''){
+				     //2.1"用户密码"重新获得光标
+                     document.getElementById("one").focus();
+					 //2.2 给出提示内容
+					 document.getElementById("one_font").innerHTML="用户密码不能为空"
+				  }else{
+				      document.getElementById("one_font").innerHTML="*" 
+				  }
+			   
+			   }
+
+			   function fun2(){
+			   
+			     //1.得到用户密码的内容
+				  var data = document.getElementById("one").value;
+			    //2.得到重复密码的内容
+				  var data2 = document.getElementById("two").value;
+
+                 //3.判断
+				   if(data != data2){
+				      //3.1 让"重复密码"重新获得光标
+                       document.getElementById("two").focus();
+					   //3.2给出提示信息
+					   document.getElementById("two_font").innerHTML="两次密码输入不一致"
+					   document.getElementById("three").disabled=true
+
+				   }else{
+				     document.getElementById("two_font").innerHTML="*" 
+					 document.getElementById("three").disabled=false;
+				   }
+			   }
+
+	  </script>
+   <body>
+              <center>
+                    <h1>用户注册页面</h1>
+					<form action="http://www.baidu.com">
+                             <table border=2>
+                              <tr>
+							     <td>用户名</td>
+								 <td><input type="text"></td>
+							  </tr>
+							  <tr>
+							     <td>用户密码</td>
+								 <td>
+								     <input type="text" id="one">
+								     <font id="one_font" style="color:red">*</font>
+								 </td>
+							  </tr>
+
+							  <tr>
+							     <td>重复密码</td>
+								 <td><input type="text" id="two" onfocus="window.fun1()" onblur="window.fun2()">
+								 
+								       <font id="two_font" style="color:red">*</font>
+								 </td>
+							  </tr>
+
+							  <tr>
+							     <td>邮箱</td>
+								 <td><input type="text"></td>
+							  </tr>
+
+							  <tr>
+							     <td><input type="submit" value="注册" disabled id="three"></td>
+								 <td><input type="reset" value="重置"></td>
+							  </tr>
+
+							 </table>
+
+
+					</form>
+
+			  </center>
+   </body>
+</html>

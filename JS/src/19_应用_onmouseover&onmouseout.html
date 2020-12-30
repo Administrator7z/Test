@@ -1,0 +1,69 @@
+<html>
+   <head>
+        <script type="text/javascript">
+          
+               function fun1(){
+			     //1.定位页面中所有checkbox标签关联的DOM对象
+				 var domArray =document.getElementsByTagName("input");
+				 //2.得到标题行checkbox标签的checked属性值
+				 var flag = domArray[0].checked;
+				 //3.对数据行所有checkbox标签的checked属性值进行赋值
+                 for(var i=1;i<domArray.length;i++){
+				          var dom = domArray[i];
+						  dom.checked = flag;
+				 }          
+			   
+			   }
+
+			   function fun2(dom){
+			      dom.style.backgroundColor="red"
+			   }
+			   
+			   function fun3(dom){
+			      dom.style.backgroundColor="white"
+			   }
+		</script>
+       
+   </head>
+
+   <body>
+            <table border="2" align="center">
+               <tr>
+			      <td>
+				     <input type="checkbox" onclick="window.fun1()"/>全选/全不选
+				  </td>
+				  <td>部门编号</td>
+				   <td>部门名称</td>
+			   </tr>
+
+			    <tr onmouseover="window.fun2(this)" onmouseout="window.fun3(this)">
+			      <td>
+				     <input type="checkbox"/>
+				  </td>
+				  <td>10</td>
+				   <td>Accounting</td>
+			   </tr>
+
+			      <tr onmouseover="window.fun2(this)" onmouseout="window.fun3(this)">
+			      <td>
+				     <input type="checkbox"/>
+				  </td>
+				  <td>20</td>
+				   <td>Reasarch</td>
+			   </tr>
+
+			      <tr onmouseover="window.fun2(this)" onmouseout="window.fun3(this)">
+			      <td>
+				     <input type="checkbox"/>
+				  </td>
+				  <td>30</td>
+				   <td>SALES</td>
+			   </tr>
+              
+
+			</table>
+		 
+   
+   </body>
+
+</html>

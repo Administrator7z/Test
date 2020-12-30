@@ -1,0 +1,25 @@
+<html>
+
+    <script type="text/javascript">
+
+             function Student( p1, p2){
+			 
+			     this.sid = p1;
+				 this.sname = p2
+				 return 100;
+			 }
+			 //Student函数身份?功能函数:构造函数
+			 // JavaScript中函数身份根据其调用形式区分
+			 // 如果通过对象.函数方式调用，此时函数身份是普通函数
+			 // 通过return返回结果
+			 // 如果通过new调用函数,此时函数身份是构造函数
+			 // 此时return是无效的。构造函数运行完毕后返回一个object类型对象
+
+			// var data =  window.Student(); //功能函数
+			// alert("Student函数运行结果 "+data)
+
+			 var obj =  new Student(10,"mike");       //构造函数
+             alert("obj类型 "+typeof obj+" obj.sid = "+obj.sid+" obj.sname="+obj.sname)
+	</script>
+
+</html>
