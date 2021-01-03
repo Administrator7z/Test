@@ -1,5 +1,6 @@
 package com.vipzou.controller;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,11 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(value = "/one")
-public class OneServlet extends HttpServlet {
+@WebServlet(value = "/two")
+public class TwoServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/three");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/three");
+        requestDispatcher.forward(request,response);
     }
 }
