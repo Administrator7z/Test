@@ -46,7 +46,7 @@ public class JdbcUtil {
     //推送DQL
     public List executeQuery(String sql, Class classManager)throws Exception{
         ResultSet table = getCar(sql).executeQuery();
-        List list =ReflectUtil.convertData(table, classManager);
+        List list = ReflectUtil.convertData(table, classManager);
         close(table);
         return list;
     }
