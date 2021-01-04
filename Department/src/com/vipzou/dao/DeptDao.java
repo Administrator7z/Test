@@ -5,6 +5,7 @@ import com.vipzou.util.JdbcUtil;
 import com.vipzou.util.ReflectUtil;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class DeptDao {
@@ -44,4 +45,36 @@ public class DeptDao {
 
 
     }
+
+    public Dept  findById(String deptNo)throws Exception{
+        String sql ="select * from dept where deptNo=?";
+        PreparedStatement car = null;
+        ResultSet table = null;
+        List<Dept> deptList;
+        try {
+            car = util.getCar(sql);
+            car.setString(1, deptNo);
+            table = car.executeQuery();
+            deptList =ReflectUtil.convertData(table, Dept.class);
+        } finally {
+            util.close(table);
+        }
+
+        return deptList.get(0);
+    }
+
+    public int update(Dept dept)throws Exception{
+        String sql = null;
+        int result = 0;
+        sql =ReflectUtil.createUpdate(dept, "deptNo");
+        try {
+            result = util.executeUpdate(sql);
+        } finally {
+            util.close();
+        }
+        return result;
+    }
+
+
+    
 }

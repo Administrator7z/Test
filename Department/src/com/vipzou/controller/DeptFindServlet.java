@@ -31,7 +31,7 @@ public class DeptFindServlet extends HttpServlet {
         out.print("<td>部门编号</td>");
         out.print("<td>部门名称</td>");
         out.print("<td>部门位置</td>");
-        out.print("<td>操作</td>");
+        out.print("<td colspan=2 align=center>操作</td>");
         out.print("</tr>");
         if (all != null && all.size() > 0) {
 
@@ -41,6 +41,7 @@ public class DeptFindServlet extends HttpServlet {
                 out.print("<td>" + dept.getDname() + "</td>");
                 out.print("<td>" + dept.getLoc() + "</td>");
                 out.print("<td><a href='/myWeb/dept/delete?deptNo=" + dept.getDeptNo() + "'>删除部门</a></td>");
+                out.print("<td><a href='/myWeb/dept/findById?deptNo=" + dept.getDeptNo() + "'>详细信息</a></td>");
                 out.print("</tr>");
             }
         }
