@@ -1,6 +1,6 @@
-package com.vipzou.controller;
+package com.xxx.controller;
 
-import com.vipzou.dao.DeptDao;
+import com.xxx.dao.EmpDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "DeptDeleteServlet", value = "/dept/delete")
-public class DeptDeleteServlet extends HttpServlet {
+@WebServlet(name = "EmpDeleteServlet",value = "/emp/delete")
+public class EmpDeleteServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String detpNo = null;
-        DeptDao dao = new DeptDao();
+
+        String empNo = null;
+        EmpDao dao = new EmpDao();
         PrintWriter out = null;
         int result = 0;
-        detpNo = request.getParameter("deptNo");
+        empNo = request.getParameter("empNo");
         try {
-            result = dao.deptDelete("7889");
+            result = dao.empDelete(empNo);
         } catch (Exception e) {
             e.printStackTrace();
             result = -1;
@@ -29,11 +30,10 @@ public class DeptDeleteServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         out = response.getWriter();
         if (result == 1) {
-            out.print("<font style='color:red;font-size:40px'>部门信息删除成功</font>");
+            out.print("<font style='color:red;font-size:40px'>删除成功</font>");
         } else {
-            out.print("<font style='color:red;font-size:40px'>部门信息删除失败</font>");
+            out.print("<font style='color:red;font-size:40px'>删除失败</font>");
         }
 
     }
 }
-
