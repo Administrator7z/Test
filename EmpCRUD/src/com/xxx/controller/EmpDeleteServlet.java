@@ -1,6 +1,6 @@
 package com.xxx.controller;
 
-import com.xxx.dao.EmpDao;
+import com.xxx.pojo.EmpDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

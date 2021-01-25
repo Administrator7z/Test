@@ -1,7 +1,7 @@
 package com.xxx.controller;
 
 
-import com.xxx.dao.EmpDao;
+import com.xxx.pojo.EmpDao;
 import com.xxx.entify.Emp;
 
 import javax.servlet.ServletException;

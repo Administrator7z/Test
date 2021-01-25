@@ -1,4 +1,4 @@
-package com.xxx.dao;
+package com.xxx.pojo;
 
 
 import com.xxx.entify.Emp;
