@@ -1,0 +1,34 @@
+<html>
+   <head>
+        <script type="text/javascript">
+          
+		</script>
+       
+   </head>
+
+   <body>
+        
+           <center>
+                 <div id="two" style="width:200px;height:200px;background-color:pink">
+
+
+				 </div>
+				 <input type="text" id="one">
+				 <input type="button" value="提交" onclick="window.fun1()">
+
+		   </center>
+
+		   <script type="text/javascript">
+
+                    function fun1(){
+					  //1.读取文本框中value
+                      var data = document.getElementById("one").value;
+					  //2.将读取内容赋值到DIV的显示内容
+					  document.getElementById("two").innerText=data;
+					}
+		   </script>
+		 
+   
+   </body>
+
+</html>

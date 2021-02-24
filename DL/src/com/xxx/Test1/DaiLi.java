@@ -1,7 +1,11 @@
 package com.xxx.Test1;
 
 public class DaiLi implements YeWuService {
-    private YeWuService zhou = new Zhou();
+    YeWuService zhou;
+
+    public DaiLi(YeWuService zhou) {
+        this.zhou = zhou;
+    }
 
     @Override
     public void sing() {

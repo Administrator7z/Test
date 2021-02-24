@@ -1,0 +1,23 @@
+<html>
+   <head>
+       
+   </head>
+
+   <body>
+         <input type="text" id="one" name="mike" value="JAVA"><br/>
+		 <input type="text" id="two" name="allen" value="MySql"><br/>
+		 <input type="text" id="three" name="mike" value="HTML"><br/>
+
+		 <script type="text/javascript">
+                //读取所有name等于mike的标签中value值
+				var domArray = document.getElementsByName("mike")
+				for(var i=0;i<domArray.length;i++){
+				        var dom = domArray[i];
+						var num = dom.value;
+						window.alert("num = "+num)
+				}
+		 </script>
+   
+   </body>
+
+</html>

@@ -10,7 +10,7 @@ public class JdbcUtil {
     Connection con = null;
     PreparedStatement car = null;
     public Connection getcon() throws Exception{
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String user = "root";
         String password = "123";
 

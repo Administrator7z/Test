@@ -29,7 +29,7 @@ public class JdbcUtil {
     //连接通道创建
     public Connection getCon()throws Exception{
 
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/com.xxx.test", "root", "123");
 
         return con;
     }

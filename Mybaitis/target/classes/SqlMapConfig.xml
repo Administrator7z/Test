@@ -14,6 +14,14 @@
     <!--  -->
     <!--  </typeAliases>-->
 
+
+        <settings>
+            <setting name="logImpl" value="STDOUT_LOGGING"/>
+        </settings>
+    <typeAliases>
+        <!--        <typeAlias type="com.xxx.pojo.Student" alias="student"></typeAlias>-->
+        <package name="com.xxx.pojo"/>
+    </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -28,10 +36,9 @@
 
 
     <mappers>
-
-<!--        <package name="com.vipzou.crm.settings.dao"/>-->
         <mapper resource="StudentDaoImpl.xml"></mapper>
-
+<!--        <mapper class="com.xxx.mapper.UsersMapper"></mapper>-->
+        <package name="com.xxx.mapper"/>
     </mappers>
 </configuration>
 

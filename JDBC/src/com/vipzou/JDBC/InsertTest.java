@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 public class InsertTest {
 
     public static void main(String[] args) throws Exception {
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String user = "root";
         String password = "123";
         String sql = "insert into dept (deptno,dname,loc) values(22,'项目组','丰台')";

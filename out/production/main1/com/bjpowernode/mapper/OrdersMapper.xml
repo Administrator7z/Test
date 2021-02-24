@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.mapper.OrdersMapper">
+<!--    因为实体类Orders中包含Customer对象，要一并查出该客户的信息时，必须使用resultMap进行绑定-->
+    <resultMap id="ordersmap" type="orders">
+        <id property="id" column="oid"></id>
+        <result property="orderNumber" column="orderNumber"></result>
+        <result property="orderPrice" column="orderPrice"></result>
+<!--        解析Customer成员变量-->
+        <association property="customer" javaType="customer" >
+            <id property="id" column="cid" ></id>
+            <result property="name" column="name"></result>
+            <result property="age" column="age"></result>
+        </association>
+    </resultMap>
+    <!--    完成按id查询订单信息，并同时将该订单的客户信息一并查询出来 -->
+    <select id="getById" parameterType="int" resultMap="ordersmap">
+        select o.id oid,ordernumber,orderprice,c.id cid,name,age
+        from orders o inner join customer c
+        on o.customer_id=c.id
+        where o.id=#{id}
+    </select>
+</mapper>

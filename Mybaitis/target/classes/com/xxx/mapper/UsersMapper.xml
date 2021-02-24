@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xxx.mapper.UsersMapper">
+    <sql id="columns">
+        id,username,birthday,sex,address
+    </sql>
+    <select id="getAll" resultType="users">
+        select <include refid="columns"></include> from users
+    </select>
+    <select id="getById" resultType="users" parameterType="int">
+        select id,username,birthday,sex,address from users where id = #{id}
+    </select>
+    <select id="getByName" resultType="users" parameterType="string">
+        select id,username,birthday,sex,address from users where username like '%${value}%'
+    </select>
+    <insert id="insert" parameterType="users">
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into users(username,birthday,sex,address) values (#{username},#{birthday},#{sex},#{address})
+    </insert>
+    <select id="getByColumn" resultType="users">
+        select <include refid="columns"></include> from users where ${columnName} like '%${columnValue}%'
+    </select>
+    <select id="getByCondition" resultType="users" parameterType="users">
+        select <include refid="columns"></include> from users
+        <where>
+            <if test="username != null">
+                and username like '%${username}%'
+            </if>
+            <if test="birthday !=null">
+                and birthday = #{birthday}
+            </if>
+            <if test="sex !=null">
+                and sex = #{sex}
+            </if>
+            <if test="address !=null">
+                and address like '%${address}%'
+            </if>
+        </where>
+    </select>
+    <update id="updateCondition" parameterType="users">
+        update users
+        <set>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday}
+            </if>
+            <if test="sex != null">
+                sex = #{sex}
+            </if>
+            <if test="address != null">
+                address = #{address}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <select id="getByAddress" resultType="users">
+        select <include refid="columns"></include> from users where address in
+        <foreach collection="list" item="str" separator="," open="(" close=")">
+            #{str}
+        </foreach>
+    </select>
+    <delete id="deleteById" parameterType="int">
+        delete from users where id in
+        <foreach collection="array" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <insert id="insertBatch">
+        insert into users (username,birthday,sex,address) values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.username},#{user.birthday},#{user.sex},#{user.address})
+        </foreach>
+    </insert>
+    <select id="getByLocation" resultType="users">
+        select <include refid="columns"></include> from users where birthday between #{arg0} and #{arg1}
+    </select>
+    <select id="getByMap" resultType="users" parameterType="map">
+        select <include refid="columns"></include> from users where birthday between #{birbegin} and #{birend}
+    </select>
+    <select id="getReturnMap" parameterType="int" resultType="map">
+        select <include refid="columns"></include> from users where id = #{id}
+    </select>
+    <select id="getReturnMapMany" resultType="map">
+        select <include refid="columns"></include> from users
+    </select>
+ </mapper>

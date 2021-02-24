@@ -12,7 +12,7 @@ import java.util.List;
 public class DeptDao {
     public int insert(Dept dept) throws Exception {
         String sql = "insert into dept vlaue(?,?,?)";
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String user = "root";
         String password = "123";
         Connection con = null;
@@ -41,7 +41,7 @@ public class DeptDao {
 
     public int update(Dept dept) throws Exception {
         String sql = "update dept set dname=?,loc=? where deptno=? ";
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String user = "root";
         String password = "123";
         Connection con = null;
@@ -69,7 +69,7 @@ public class DeptDao {
 
     public int delete(Integer deptno) throws Exception {
         String sql = "delete from dept where deptno=?";
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String user = "root";
         String password = "123";
         Connection con = null;
@@ -95,7 +95,7 @@ public class DeptDao {
 
     public List selectAll() throws Exception {
         String sql = "select * from dept";
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String user = "root";
         String password = "123";
         List list = new ArrayList();

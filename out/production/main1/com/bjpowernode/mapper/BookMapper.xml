@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.mapper.BookMapper">
+
+    <!--手工进行列名和实体类成员变量绑定，使用resultMap
+        id:在<select>标签中使用本绑定的代码的名称
+        type:是这个绑定结果的返回值，类似于resultType的功能
+    -->
+    <resultMap id="bookmap" type="book">
+<!--        id:绑定主键信息
+            property: 类中的成员变量的名称
+            column: 表中列的名称
+-->
+        <id property="id" column="bookid"></id>
+<!--        result：绑定非主键列
+            property: 类中的成员变量的名称
+            column: 表中列的名称
+-->
+        <result property="name" column="bookname"></result>
+    </resultMap>
+<!--    查询全部图书-->
+    <select id="getAll" resultType="book">
+        select bookid id ,bookname name
+        from book
+    </select>
+
+<!--    使用resultMap进行查询-->
+    <select id="getAllByResultMap" resultMap="bookmap">
+        select bookid,bookname
+        from book
+    </select>
+</mapper>

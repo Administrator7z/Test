@@ -1,0 +1,9 @@
+com\xxx\mapper\OrdersMapper.class
+com\xxx\mapper\UsersMapper.class
+com\xxx\pojo\Book.class
+com\xxx\mapper\CustomerMapper.class
+com\xxx\pojo\Customer.class
+com\xxx\pojo\Orders.class
+com\xxx\pojo\Users.class
+com\xxx\mapper\BookMapper.class
+com\xxx\pojo\Student.class

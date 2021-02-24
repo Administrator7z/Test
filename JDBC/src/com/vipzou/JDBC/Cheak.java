@@ -8,7 +8,7 @@ public class Cheak {
         Scanner sc = new Scanner(System.in);
         String username = sc.nextLine();
         String password = sc.nextLine();
-        String url = "jdbc:mysql://localhost:3306/test";
+        String url = "jdbc:mysql://localhost:3306/com.xxx.test";
         String sqlUser = "root";
         String sqlPassword = "123";
         String sql = "select count(*) from emp where ename = ? and empno = ?";

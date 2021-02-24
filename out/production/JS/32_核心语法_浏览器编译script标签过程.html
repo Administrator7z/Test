@@ -1,0 +1,16 @@
+<html>
+
+    <script type="text/javascript">
+             fun1(); //此处运行结果是多少        2     2     3
+             function fun1(){
+			    alert(1)
+			 }
+             fun1();//此处运行结果是多少         1     2     1
+			 function fun1(){
+			     alert(2);
+			 }
+			 var fun1 = function (){ alert(3)}
+			 fun1();//此处运行结果是多少         3     3     2
+	</script>
+
+</html>

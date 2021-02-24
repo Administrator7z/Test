@@ -1,0 +1,24 @@
+<html>
+   <head>
+       
+   </head>
+
+   <body>
+         <div>这是第一个DIV</div>
+		 <p>这是第一个段落标签</p>
+		 <div>这是第二个DIV</div>
+		 <p>这是第二个段落标签</p>
+
+		 <script type="text/javascript">
+                //读取所有段落标签显示的内容
+				var domArray = document.getElementsByTagName("p");
+				for(var i=0;i<domArray.length;i++){
+				       var dom = domArray[i];
+					   var num = dom.innerText
+					   window.alert("num = "+num);
+				}
+		 </script>
+   
+   </body>
+
+</html>

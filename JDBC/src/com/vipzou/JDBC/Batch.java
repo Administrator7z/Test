@@ -11,7 +11,7 @@ public class Batch {
         PreparedStatement ps = null;
         try {
             String sql = "insert into dpet vlaues(?,?,?)";
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/com.xxx.test", "root", "123");
             con.setAutoCommit(false);
 
             ps = con.prepareStatement(sql);
