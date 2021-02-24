@@ -1,0 +1,5 @@
+com\xxx\controller\StudentController.class
+com\xxx\mapper\StudentMapper.class
+com\xxx\service\StudentService.class
+com\xxx\service\impl\StudentServiceImpl.class
+com\xxx\pojo\Student.class

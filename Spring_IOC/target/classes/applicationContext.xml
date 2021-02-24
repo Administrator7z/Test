@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="school" class="com.xxx.s01.School">
+        <property name="name" value="哈佛"></property>
+        <property name="address" value="哈尔滨"></property>
+    </bean>
+    <!--    通过set注入-->
+    <bean id="stu" class="com.xxx.s01.Student">
+        <property name="name" value="张三"></property>
+        <property name="age" value="20"></property>
+        <property name="school" ref="school"></property>
+    </bean>
+    <bean id="myDate" class="java.util.Date" scope="prototype"></bean>
+    <!--    通过构造方法-->
+    <bean id="stu2" class="com.xxx.s01.Student">
+        <constructor-arg name="age" value="10"></constructor-arg>
+        <constructor-arg name="name" value="赵四"></constructor-arg>
+        <constructor-arg name="school" ref="school"></constructor-arg>
+    </bean>
+    <!--    通过构造方法下标-->
+    <bean id="stu3" class="com.xxx.s01.Student">
+        <constructor-arg index="1" value="10"></constructor-arg>
+        <constructor-arg index="0" value="赵四"></constructor-arg>
+        <constructor-arg index="2" ref="school"></constructor-arg>
+    </bean>
+    <!--    什么都不写 按照顺序赋值-->
+    <bean id="stu4" class="com.xxx.s01.Student">
+        <constructor-arg value="赵四"></constructor-arg>
+        <constructor-arg value="10"></constructor-arg>
+        <constructor-arg ref="school"></constructor-arg>
+    </bean>
+    <!--    byName自动注入-->
+    <bean id="stu5" class="com.xxx.s01.Student" autowire="byName">
+        <property name="name" value="张三"></property>
+        <property name="age" value="20"></property>
+    </bean>
+    <!--    byType自动注入-->
+    <bean id="stu6" class="com.xxx.s01.Student" autowire="byType">
+        <property name="name" value="张三"></property>
+        <property name="age" value="20"></property>
+    </bean>
+    <context:component-scan base-package="com.xxx.s02"></context:component-scan>
+</beans>
