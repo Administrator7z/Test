@@ -21,6 +21,5 @@ public class AjaxServlet extends HttpServlet {
         writer.print("返回的数据");
         writer.flush();
         writer.close();
-
     }
 }
